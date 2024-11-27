@@ -5,7 +5,7 @@ import { Id } from "../shared"
 
 export const eventos: Evento[] = [
     {
-        id: Id.novo(),
+        id: "g4d56f4g5-d4h64h65fg-4h65f4gh56",
         alias: "festival-de-danca",
         senha: "123456",
         nome: "Festival de Dança",
