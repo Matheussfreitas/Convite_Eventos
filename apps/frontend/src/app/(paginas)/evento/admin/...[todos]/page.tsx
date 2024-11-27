@@ -1,11 +1,12 @@
 "use client"
 import { Convidado, Evento, eventos } from "@/core";
-import { use, useState, useEffect } from "react";
+import { useState, useEffect } from "react";
+import React from "react";
 
 export default function PaginaAdminEvento(props: any) {
-    const params: any = use(props.params);
+    const params: any = props.params;
 
-    const id = props.params.todos[0];
+    const id = params.todos[0];
     const [evento, setEvento] = useState<Evento | null>(null);
     const [senha, setSenha] = useState<string | null>(params.todos[1] ?? null);
 
@@ -26,10 +27,11 @@ export default function PaginaAdminEvento(props: any) {
         carregarEvento();
     }, [id, senha]);
 
-    return evento ? (
-        <div className="flex flex-col">
-            <span>Id: {id}</span>
-            <span>Senha: {senha}</span>
+    return (
+        <div className="flex flex-col items-center">
+            {evento ? (
+                <DashboardEvento />
+            ) : ( <FormSenhaEvento /> )}
         </div>
-    ) : null;
+    )
 }

@@ -6,4 +6,9 @@ export default class Id {
     private static hash(): string {
         return Math.random().toString(36).substring(2, 15);
     }
+
 }
+    
+    for (let index = 0; index < 4; index++) {
+        console.log(Id.novo());
+    }   
